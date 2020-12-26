@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 
-PAGE_CONFIG = {"page_title":"StColab.io","page_icon":":smiley:","layout":"centered"}
-st.beta_set_page_config(**PAGE_CONFIG)
+#PAGE_CONFIG = {"page_title":"StColab.io","page_icon":":smiley:","layout":"centered"}
+#st.beta_set_page_config(**PAGE_CONFIG)
 def main():
 
   st.title("Fantasy Dream Team Predictions ")
