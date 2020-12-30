@@ -1,8 +1,7 @@
 name: Execute notebook
 
-on:
-  schedule:
-  - cron: "0 */12 * * *"
+on: [push]
+
 jobs:
   run:
     runs-on: ubuntu-latest
