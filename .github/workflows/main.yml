@@ -1,4 +1,4 @@
-name: Python package
+name: Workflow
 
 on: [push]
 
@@ -22,10 +22,28 @@ jobs:
         pip install jupyter
         pip install -r requirements.txt
         # You can test your matrix by printing the current Python version
-    - name: Display Python version
+    - name: Run Fantasy Scripts
       run: |
         jupyter nbconvert --to python Fantasy_League.ipynb
         python Fantasy_League.py
-        
+        dir
+    
+    - name: Commit files
+      id: commit
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "github-actions"
+        git add --all
+        if [-z "$(git status --porcelain)"]; then
+           echo "::set-output name=push::false"
+        else
+           git commit -m "Add changes" -a
+           echo "::set-output name=push::true"
+        fi
+      shell: bash
+    - name: Push changes
+      if: steps.commit.outputs.push == 'true'
+      uses: ad-m/github-push-action@master
+      with:
+         github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      
