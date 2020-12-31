@@ -1,5 +1,5 @@
 streamlit==0.61.0
 pandas==0.25.3
 plotly==4.4.1
-skimage==0.16.2
+scikit-image==0.16.2
 
