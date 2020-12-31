@@ -24,6 +24,7 @@ jobs:
     - name: Display Python version
       run: |
         jupyter nbconvert --to python Fantasy_League.ipynb
+        python Fantasy_League.py
         
 
       
