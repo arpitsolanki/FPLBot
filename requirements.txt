@@ -2,4 +2,4 @@ streamlit==0.73.1
 pandas==0.25.3
 plotly==4.4.1
 scikit-image==0.16.2
-
+xgboost==0.90
