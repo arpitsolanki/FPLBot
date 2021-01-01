@@ -1,12 +1,12 @@
-player_name,position,gw,new_photo,total_points,team_id
-Alisson Ramses Becker,GK,16,116535,6,11
-Andrew Robertson,DEF,16,122798,9,11
-Joel Matip,DEF,16,60914,0,11
-Kurt Zouma,DEF,16,103192,0,5
-Bruno Miguel Borges Fernandes,MID,16,141746,6,13
-James Ward-Prowse,MID,16,101178,3,16
-Jack Grealish,MID,16,114283,2,2
-Marcus Rashford,MID,16,176297,7,13
-Patrick Bamford,FWD,16,106617,8,10
-Jamie Vardy,FWD,16,101668,1,9
-Che Adams,FWD,16,200439,1,16
+player_name,position,gw,new_photo,total_points
+Emiliano Martínez,GK,15,98980,10
+Aaron Cresswell,DEF,15,55459,4
+Andrew Robertson,DEF,15,122798,2
+Ezri Konsa Ngoyo,DEF,15,199798,1
+Mohamed Salah,MID,15,118748,2
+Mateusz Klich,MID,15,72222,3
+Kevin De Bruyne,MID,15,61366,3
+Pedro Lomba Neto,MID,15,247632,6
+Roberto Firmino,FWD,15,92217,2
+Ollie Watkins,FWD,15,178301,11
+Harry Kane,FWD,15,78830,2
