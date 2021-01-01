@@ -1,6 +1,8 @@
+%%writefile app.py
 import streamlit as st
 import pandas as pd
 from skimage import io
+import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 
 def main():
@@ -45,7 +47,8 @@ def main():
   #Populate line chart for previous weeks
 
   if choice < max_gw:
-    st.subheader("Points comparison - Predicted vs Actual Dream Team")
+    col1,col2= st.beta_columns((2,2))
+    col1.subheader("Pts - Predicted vs Actual Team")
 
     last_gw_dream_team=pd.read_csv('https://raw.githubusercontent.com/arpitsolanki/FPLBot/main/last_gw_dream_team.csv')
     dream_team_points=last_gw_dream_team['total_points'].sum()
@@ -55,13 +58,18 @@ def main():
 
     avg_score_df=pd.read_csv('https://raw.githubusercontent.com/arpitsolanki/FPLBot/main/avg_score_df.csv')
     avg_score=avg_score_df.loc[avg_score_df.id==choice,'average_entry_score'].sum()
+#    st.text(avg_score)
 
     d = {'cat': ['dream_team_points','gw_average_points','my_team_points'], 'pts': [dream_team_points,avg_score,my_team_points]}
     chart_data = pd.DataFrame(data=d)
-    cat=['Actual DreamTeam Points','GW AverageTeamPoints','PredictedDreamTeamPoints']
+    cat=['dream_team_pts','gw_avg_pts','my_team_pts']
 
     fig = go.Figure([go.Bar(x=cat, y=[dream_team_points,avg_score,my_team_points])])
-    st.plotly_chart(fig,use_container_width=True)
+    fig.update_layout(width=400,height=300,margin=dict(l=5, r=5, t=5, b=5))
+    col1.plotly_chart(fig,width=350,height=300)
+    
+    col2.subheader("Points scored by predicted team")
+    col2.write(gw_points_history[['player_name','total_points']])
 
     # st.bar_chart(chart_data)
 #     alt.Chart(chart_data).mark_bar().encode(
