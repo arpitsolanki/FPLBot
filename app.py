@@ -67,6 +67,7 @@ def main():
     fig.update_layout(width=400,height=300,margin=dict(l=5, r=5, t=5, b=5))
     col1.plotly_chart(fig,width=350,height=300)
     
+    gw_points_history=gw_points_history.loc[gw_points_history.gw==choice]
     col2.subheader("Points scored by predicted team")
     col2.write(gw_points_history[['player_name','total_points']])
 
