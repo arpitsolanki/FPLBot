@@ -53,7 +53,7 @@ def main():
     dream_team_points=last_gw_dream_team['total_points'].sum()
 
     gw_points_history=pd.read_csv('https://raw.githubusercontent.com/arpitsolanki/FPLBot/main/gw_points_history.csv')
-    my_team_points=gw_points_history['total_points'].sum()
+    my_team_points=gw_points_history.loc[gw_points_history.gw==choice,'total_points'].sum()
 
     avg_score_df=pd.read_csv('https://raw.githubusercontent.com/arpitsolanki/FPLBot/main/avg_score_df.csv')
     avg_score=avg_score_df.loc[avg_score_df.id==choice,'average_entry_score'].sum()
