@@ -7,3 +7,6 @@ Every week this app imports Fantasy Premier League data from https://github.com/
 More details on this blog post. 
 
 https://arpitsolanki.github.io/fastpagetest/2021/02/06/Using-ML-to-win-FPL.html
+
+The app is currently deployed on Heroku - 
+http://fpl-gentoo.herokuapp.com/
